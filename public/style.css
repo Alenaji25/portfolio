@@ -116,9 +116,9 @@ body {
   .project-banner {
     display: block;
     margin: 0 auto 1.5rem auto; /* top auto bottom spacing */
-    width: 80%;
+    width: 50%;
     max-width: 800px; /* so it doesn't become too large on big screens */
-    height: 80%;
+    height: 50%;
     border-radius: 10px;
     object-fit: cover;
   }
