@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
           message: document.getElementById('message').value,
         };
   
-        fetch('http://localhost:3000/send-query', {
+        fetch('/send-query', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
