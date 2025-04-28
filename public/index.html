@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Alen K Aji - Computer Science Engineer specialized in Machine Learning and AI">
+  <title>Alen K Aji | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="hero">
+    
+    <h1>Alen K Aji</h1>
+    <p>Computer Science Engineer | AI & Machine Learning Enthusiast</p>
+    <nav class="navigation-links">
+        <a href="#" onclick="scrollToSection(event, 'profile')">About Me</a>
+        <a href="#" onclick="scrollToSection(event, 'projects')">Projects</a>
+        <a href="#" onclick="scrollToSection(event, 'contact')">Contact</a>
+        <a href="#" onclick="scrollToSection(event, 'query')">Query</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <section id="profile" class="fade-section about-container">
+        <div class="about-image">
+          <img src="images\profile.jpg" alt="Alen K Aji" class="profile-pic">
+        </div>
+        <div class="about-text">
+          <h2>Yeh Its me !</h2>
+          <p>Computer Science Engineer with practical experience developing deep learning models for biomarker identification and flood prediction. Proficient in Python, Java, SQL, TensorFlow, and PyTorch. Skilled in data preprocessing, model optimization, and deployment of ML solutions.</p>
+        </div>
+      </section>
+      
+
+    <section id="skills" class="fade-section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div><strong>Programming:</strong> Python, SQL, Java, C</div>
+        <div><strong>ML & Data Processing:</strong> Pandas, scikit-learn, TensorFlow, PyTorch</div>
+        <div><strong>Databases & Tools:</strong> MySQL, Excel, Git, GitHub, VS Code</div>
+        <div><strong>Soft Skills:</strong> Communication, Teamwork, Problem Solving</div>
+      </div>
+    </section>
+
+    <section id="education" class="fade-section">
+      <h2>Academic Qualification</h2>
+      <ul>
+        <li><strong>IIT Guwahati</strong> - Artificial Intelligence and Machine Learning</li>
+        <li><strong>Mar Athanasius College of Engineering</strong> - B.Tech Computer Science Engineering (CGPA: 9.3)</li>
+      </ul>
+    </section>
+
+    <section id="experience" class="fade-section">
+      <h2>Work Experience</h2>
+      <ul>
+        <li><strong>ReverTech IT Solutions</strong> - Machine Learning Intern (Jan 2025 - Present)<br>
+        Developed a Gradient Boosting flood prediction system with 94% accuracy, collaborated on ML workflows, and deployed production AI features.</li>
+      </ul>
+    </section>
+
+    
+
+    <section id="projects" class="fade-section">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <a href="biomarker.html" class="project-card">
+          <h3>Neural Network for Biomarker Prediction</h3>
+          <p>Built a deep learning model identifying 20 gene biomarkers for cancer immunotherapy (AUC-ROC: 0.71).</p>
+        </a>
+        <a href="flood-prediction.html" class="project-card">
+          <h3>Flood Prediction System</h3>
+          <p>Engineered and deployed an AI model for flood forecasting using meteorological data, achieving 94% accuracy.</p>
+        </a>
+        <a href="movie-genre.html" class="project-card">
+          <h3>Movie Genre Classification</h3>
+          <p>Created a text classification model to categorize movies into genres based on plot descriptions.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="certifications" class="fade-section">
+        <h2>Certifications</h2>
+        <div class="certificate-container">
+          <img src="images\nptel.jpg" alt="NPTEL Certificate" class="certificate-thumb" onclick="openLightbox(this)">
+          <p>NPTEL Certificate – Programming, Data Structures & Algorithms using Python</p>
+        </div>
+      
+        <!-- Lightbox Modal -->
+        <div id="lightbox" onclick="closeLightbox()">
+          <img id="lightbox-img" src="" alt="Certificate Full View">
+        </div>
+      </section>
+      
+
+    <section id="interests" class="fade-section">
+      <h2>Areas of Interest</h2>
+      <p>Machine Learning, Bioinformatics, AI-driven software development, Cybersecurity, Full-stack Development, Scalable Systems, Movies.</p>
+    </section>
+
+    <section id="contact" class="fade-section">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:alenkaji12@gmail.com">alenkaji12@gmail.com</a></p>
+      <p>Phone: +91 8594009559</p>
+      <p>GitHub: <a href="https://github.com/AlenKAji" target="_blank">github.com/AlenKAji</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/alenkaji/" target="_blank">linkedin.com/in/alenkaji</a></p>
+      <p>HackerRank: <a href="https://www.hackerrank.com/profile/b22cs0821" target="_blank">hackerrank.com/profile/b22cs0821</a></p>
+    </section>
+    <button id="scrollToTopBtn" title="Go to top">⬆️</button>
+    <section id="query" class="fade-section">
+        <h2>Send Me a Query</h2>
+        <form id="query-form" class="query-form">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+      
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alen K Aji. All rights reserved.</p>
+  </footer>
+</body>
+</html>
