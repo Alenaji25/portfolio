@@ -7,19 +7,110 @@
 </head>
 <body>
   <header class="hero">
-    <h1>Neural Network for Biomarker Prediction</h1>
-   
-
+    <h1>Biomarker Prediction for Cancer Immunotherapy using Classical Neural Network</h1>
     <nav class="navigation-links">
       <a href="index.html">← Back to Home</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <img src="images\biomarker.jpeg" alt="Project Banner" class="responsive-image">
-      <p>Developed a deep learning model identifying 20 key gene biomarkers from RNA-seq data, achieving an AUC-ROC of 0.71. Implemented feature selection techniques to improve patient stratification for targeted cancer immunotherapy. Supported precision medicine initiatives through advanced biomarker discovery efforts.</p>
-      <p><strong>Tools:</strong> Python, TensorFlow, Optuna, Pandas</p>
+  <main class="content">
+    <section class="project-section">
+      <img src="images/biomarker.jpeg" alt="Project Banner" class="project-banner">
+
+      <h2>🔬 Project Overview</h2>
+      <p>This project uses a classical neural network to predict gene mutations involved in CTLA-4 pathway regulation from high-dimensional RNA-sequencing data. It aims to identify the most relevant genes for cancer immunotherapy through gradient-based feature attribution.</p>
+
+      <h2>🧬 Problem Statement</h2>
+      <p>Given expression levels of 2048 genes from RNA sequencing (<code>RNA.csv</code>), the model predicts the presence of mutations across 13 target genes (<code>MUTATION.csv</code>) associated with the CTLA-4 signaling pathway, a key regulator in cancer immunotherapy.</p>
+      <p>In addition to mutation prediction, the model identifies the top 20 most influential input genes for each mutation target, helping to highlight potential biomarker candidates and improve interpretability.</p>
+
+      <h2>🧠 Model Architecture</h2>
+      <ul>
+        <li>Input Layer: 2048 features</li>
+        <li>Two hidden layers (hyperparameters tuned with Optuna)</li>
+        <li>Output Layer: 13 mutation targets</li>
+        <li>Activation: ReLU</li>
+        <li>Output: Sigmoid (for probability prediction)</li>
+      </ul>
+
+      <h2>⚙️ Features</h2>
+      <ul>
+        <li>10-fold cross-validation for robust evaluation</li>
+        <li>Hyperparameter optimization with Optuna</li>
+        <li>Gradient-based gene importance extraction</li>
+        <li>Held-out test set evaluation (F1 Score, Precision, Recall, AUC-ROC)</li>
+        <li>Custom sample prediction via <code>run.py</code></li>
+        <li>Gene importance visualization and Excel-style export</li>
+      </ul>
+
+      <h2>📁 File Structure</h2>
+      <pre>
+├── data/
+│   ├── RNA.csv                # Gene expression data
+│   └── MUTATION.csv          # Mutation status for 13 genes + folds
+├── results/                  # Evaluation output and plots
+├── main.py                   # Main entry point
+├── evaluator.py              # Cross-validation, training, and evaluation
+├── model.py                  # GeneSelectorNN architecture
+├── utils.py                  # Visualization, feature attribution, helpers
+├── run.py                    # Load trained model and predict on a custom sample
+      </pre>
+
+      <h2>📂 Dataset</h2>
+      <p>Due to GitHub's file size restrictions, the dataset is hosted externally.</p>
+      <p><strong>🔗 <a href="#">Click here to download data.zip (73.7 MB)</a></strong></p>
+      <p>Contents:</p>
+      <ul>
+        <li><code>RNA.csv</code>: Gene expression matrix (2048 features)</li>
+        <li><code>MUTATION.csv</code>: Mutation labels for 13 genes + cross-validation folds</li>
+      </ul>
+
+      <h2>📦 Setup</h2>
+      <p>After downloading <code>data.zip</code>, extract it into the root of the project. It should create:</p>
+      <pre>
+project-root/
+├── data/
+│   ├── RNA.csv
+│   └── MUTATION.csv
+      </pre>
+      <p>🔒 Add <code>data/</code> to <code>.gitignore</code> to avoid committing large files.</p>
+
+      <h2>📊 Outputs</h2>
+      <ul>
+        <li>Top 20 genes by importance for each sample</li>
+        <li>Gene importance scores (CSV and bar chart)</li>
+        <li>Per-class and macro/micro metrics</li>
+        <li>Neural network visualization for each trial</li>
+        <li>Excel-style image table for top genes of custom input</li>
+      </ul>
+
+      <h2>🔍 Getting Started</h2>
+      <p>Run the training pipeline:</p>
+      <pre><code>python main.py</code></pre>
+      <p>After training, make a prediction on a custom sample:</p>
+      <pre><code>python run.py</code></pre>
+
+      <h2>🧪 Requirements</h2>
+      <ul>
+        <li>Python 3.8+</li>
+        <li>PyTorch</li>
+        <li>pandas, numpy, seaborn, matplotlib</li>
+        <li>scikit-learn</li>
+        <li>optuna</li>
+      </ul>
+
+      <h2>🛡️ Safety</h2>
+      <p>To suppress PyTorch's future warnings when loading models:</p>
+      <pre><code>
+best_params = torch.load(hyperparams_path, weights_only=True)
+model.load_state_dict(torch.load(model_path, weights_only=True))
+      </code></pre>
+
+      <h2>📚 Reference</h2>
+      <p>This implementation is inspired by the research work:</p>
+      <p><strong>Biomarker discovery with quantum neural networks: a case-study in CTLA4-activation pathways</strong> by Phuong‑Nam Nguyen</p>
+      <p>🔗 <a href="#">Paper Link</a> | 🔗 <a href="#">Repository</a></p>
+      <p>This repo presents a classical neural network version of the approach described in the paper. No code from the original implementation was used — this is an independent reimplementation based on the concept presented in the paper.</p>
     </section>
   </main>
 </body>
