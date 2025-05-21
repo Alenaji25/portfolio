@@ -61,7 +61,29 @@ function openLightbox(imgElement) {
       lightbox.classList.add('active');
     }, 50);
   }
+  document.addEventListener('mousemove', e => {
+    const { clientX, clientY } = e;
+    document.body.style.backgroundPosition = `${clientX * 0.01}px ${clientY * 0.01}px`;
+  });
+  const cursor = document.querySelector('.cursor-dot');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('ripple');
+      ripple.style.left = `${e.offsetX}px`;
+      ripple.style.top = `${e.offsetY}px`;
+      this.appendChild(ripple);
   
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+      
   function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     lightbox.classList.remove('active');
