@@ -239,6 +239,7 @@ body {
     height: auto;
     border-radius: 8px;
     cursor: pointer;
+    text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
@@ -395,8 +396,122 @@ code {
   padding: 2px 4px;
   border-radius: 4px;
 }
-.skills-list p {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
+#experience {
+  padding: 2rem 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.experience-entry {
+  margin-bottom: 1.5rem;
+}
+
+.experience-entry h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.experience-entry ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  line-height: 1.6;
+}
+
+.certificate-section {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-left: 4px solid #007BFF;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.certificate-link {
+  height: 100px;
+  width: 200px;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+#lightbox {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.certificate-thumb {
+  width: 150px;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: transform 1s ease;
+}
+
+.certificate-thumb:hover {
+  transform: scale(1.5);
+}.certificate-wrapper {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100px;
+  width: 300px;
+}
+
+.popup-box {
+
+  align-content: center;
+  
+  height: 400px;
+  width: 600px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #fff;
+  border: 2px solid #ccc;
+  padding: 10px;
+  max-width: 500px;
+  z-index: 100;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.popup-box.visible {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.popup-box img {
+  width: 400px;
+  height: 300px;
+  border-radius: 4px;
+}
+
+.close-btn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+.download-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #c9a66b;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #b08c5d;
 }
