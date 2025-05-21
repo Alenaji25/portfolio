@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Flood Prediction System | Alen K Aji</title>
+  <title>Movie Genre Classification | Alen K Aji</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <h1>Flood Prediction System</h1>
+    <h1>Movie Genre Classification System</h1>
     <nav class="navigation-links">
       <a href="index.html">← Back to Home</a>
     </nav>
@@ -15,23 +15,29 @@
 
   <main class="content">
     <section class="project-section">
-       <img src="images/flood.jpeg" alt="Project Banner" class="project-banner">
+       <img src="images/movie.jpeg" alt="Project Banner" class="project-banner">
 
       <p>
-        A machine learning model for flood prediction, leveraging geospatial and atmospheric data to enhance forecasting accuracy.
-        The system analyses key environmental factors to support early warning and disaster management efforts.
+        This project builds a multi-model classification system to predict movie genres based on plot summaries.
+        It integrates both classical machine learning and modern deep learning techniques to evaluate model performance
+        and classification accuracy.
       </p>
 
-      <h2>✨Features</h2>
+      <h2>✨ Task Objectives</h2>
       <ul>
-        <li>Predicts Flood Probability from environmental features.</li>
-        <li>Uses Gradient Boosting Regressor for accurate predictions.</li>
-        <li>Feature Importance plot to explain the model.</li>
-        <li>Adds Latitude and Longitude to simulate Kerala locations (for visualization, not training).</li>
-        <li>Includes performance metrics: MSE, RMSE, MAE, and R² score.</li>
+        <li>Develop a system to classify movie plots into genres using multiple models.</li>
+        <li>Compare performance of classical and deep learning approaches.</li>
+        <li>Handle class imbalance and support custom user input for predictions.</li>
       </ul>
 
-      <h2>📁Files</h2>
+      <h2>🧠 Models Implemented</h2>
+      <ul>
+        <li><strong>Random Forest</strong> with TF-IDF vectorization and handcrafted features</li>
+        <li><strong>BERT + Logistic Regression</strong> (shallow neural model on BERT embeddings)</li>
+        <li><strong>BERT + MLP</strong> (deep neural network using Keras)</li>
+      </ul>
+
+      <h2>📁 Project Structure</h2>
       <table>
         <thead>
           <tr>
@@ -40,36 +46,59 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>flood_prediction.py</td><td>Main Python script for loading data, preprocessing, training, and evaluating the model.</td></tr>
-          <tr><td>flood.csv</td><td>Dataset with environmental data.</td></tr>
-          <tr><td>requirements.txt</td><td>List of required Python packages.</td></tr>
-          <tr><td>README.md</td><td>Project documentation.</td></tr>
+          <tr><td>model.py</td><td>Train, evaluate, and predict with all models</td></tr>
+          <tr><td>bert_lr_model.py</td><td>BERT + Logistic Regression implementation</td></tr>
+          <tr><td>bert_mlp_model.py</td><td>BERT + MLP implementation (Keras)</td></tr>
+          <tr><td>random_forest.py</td><td>Random Forest pipeline with GridSearchCV</td></tr>
+          <tr><td>vectorizer.py</td><td>TF-IDF and handcrafted features</td></tr>
+          <tr><td>preprocess.py</td><td>Text cleaning and preprocessing</td></tr>
+          <tr><td>models/</td><td>Stores trained models and evaluation outputs</td></tr>
         </tbody>
       </table>
 
-      <h2>📦How to Run</h2>
+      <h2>🛠 Steps to Run the Project</h2>
       <ol>
         <li>Clone the repository:
-          <pre>git clone https://github.com/&lt;your-username&gt;/flood-prediction-system.git
-cd flood-prediction-system</pre>
+          <pre>git clone https://github.com/your-username/movie-genre-classification.git
+cd movie-genre-classification</pre>
         </li>
-        <li>Install dependencies:
+        <li>Download and prepare the dataset from Kaggle. Place the following in <code>Genre Classification Dataset/</code>:
+          <ul>
+            <li>train_data.txt</li>
+            <li>test_data.txt</li>
+            <li>test_data_solution.txt</li>
+          </ul>
+        </li>
+        <li>Download trained models and place in <code>models/</code>:
+          <ul>
+            <li>bert_logreg_model.pkl</li>
+            <li>bert_mlp_model.h5</li>
+            <li>bert_mlp_encoder.pkl</li>
+            <li>random_forest_model.pkl</li>
+          </ul>
+        </li>
+        <li>Install requirements:
           <pre>pip install -r requirements.txt</pre>
         </li>
-        <li>Run the script:
-          <pre>python flood_prediction.py</pre>
+        <li>Run the system:
+          <pre>python model.py</pre>
         </li>
       </ol>
 
-      <h2>📊Sample Output</h2>
-      <p>Model Performance Metrics:</p>
+      <h2>📊 Outputs</h2>
+      <p>
+        Models generate confusion matrices, classification reports, and misclassified sample logs.
+        Results and saved models are available in the <code>models/</code> directory.
+        You can also provide your own movie plot to get genre predictions.
+      </p>
+
+      <h2>🧹 Code Quality</h2>
       <ul>
-        <li>Mean Squared Error (MSE)</li>
-        <li>Root Mean Squared Error (RMSE)</li>
-        <li>Mean Absolute Error (MAE)</li>
-        <li>R² Score</li>
+        <li>Modular code structure</li>
+        <li>Function-level documentation and inline comments</li>
+        <li>Reproducible results with consistent paths</li>
+        <li>Scalable design for integrating new models</li>
       </ul>
-      <p>It also displays a bar chart showing feature importance.</p>
 
       <h2>✍️ Author</h2>
       <p><strong>Alen K Aji</strong></p>
