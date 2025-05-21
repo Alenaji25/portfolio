@@ -1,25 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Movie Genre Classification | Alen K Aji</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <h1>Movie Genre Classification</h1>
-   
-
+    <h1>Movie Genre Classification System</h1>
     <nav class="navigation-links">
       <a href="index.html">← Back to Home</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <img src="images\movie.jpeg" alt="Project Banner" class="responsive-image" >
-      <p>Built a text classification model capable of predicting multiple genres based on movie plot descriptions. Applied natural language processing techniques and supervised learning models to classify movies into genres accurately.</p>
-      <p><strong>Tools:</strong> Python, NLTK, scikit-learn</p>
+  <main class="content">
+    <section class="project-section">
+      <p>
+        This project builds a multi-model classification system to predict movie genres based on plot summaries.
+        It integrates both classical machine learning and modern deep learning techniques to evaluate model performance
+        and classification accuracy.
+      </p>
+
+      <h2>✨ Task Objectives</h2>
+      <ul>
+        <li>Develop a system to classify movie plots into genres using multiple models.</li>
+        <li>Compare performance of classical and deep learning approaches.</li>
+        <li>Handle class imbalance and support custom user input for predictions.</li>
+      </ul>
+
+      <h2>🧠 Models Implemented</h2>
+      <ul>
+        <li><strong>Random Forest</strong> with TF-IDF vectorization and handcrafted features</li>
+        <li><strong>BERT + Logistic Regression</strong> (shallow neural model on BERT embeddings)</li>
+        <li><strong>BERT + MLP</strong> (deep neural network using Keras)</li>
+      </ul>
+
+      <h2>📁 Project Structure</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>model.py</td><td>Train, evaluate, and predict with all models</td></tr>
+          <tr><td>bert_lr_model.py</td><td>BERT + Logistic Regression implementation</td></tr>
+          <tr><td>bert_mlp_model.py</td><td>BERT + MLP implementation (Keras)</td></tr>
+          <tr><td>random_forest.py</td><td>Random Forest pipeline with GridSearchCV</td></tr>
+          <tr><td>vectorizer.py</td><td>TF-IDF and handcrafted features</td></tr>
+          <tr><td>preprocess.py</td><td>Text cleaning and preprocessing</td></tr>
+          <tr><td>models/</td><td>Stores trained models and evaluation outputs</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🛠 Steps to Run the Project</h2>
+      <ol>
+        <li>Clone the repository:
+          <pre>git clone https://github.com/your-username/movie-genre-classification.git
+cd movie-genre-classification</pre>
+        </li>
+        <li>Download and prepare the dataset from Kaggle. Place the following in <code>Genre Classification Dataset/</code>:
+          <ul>
+            <li>train_data.txt</li>
+            <li>test_data.txt</li>
+            <li>test_data_solution.txt</li>
+          </ul>
+        </li>
+        <li>Download trained models and place in <code>models/</code>:
+          <ul>
+            <li>bert_logreg_model.pkl</li>
+            <li>bert_mlp_model.h5</li>
+            <li>bert_mlp_encoder.pkl</li>
+            <li>random_forest_model.pkl</li>
+          </ul>
+        </li>
+        <li>Install requirements:
+          <pre>pip install -r requirements.txt</pre>
+        </li>
+        <li>Run the system:
+          <pre>python model.py</pre>
+        </li>
+      </ol>
+
+      <h2>📊 Outputs</h2>
+      <p>
+        Models generate confusion matrices, classification reports, and misclassified sample logs.
+        Results and saved models are available in the <code>models/</code> directory.
+        You can also provide your own movie plot to get genre predictions.
+      </p>
+
+      <h2>🧹 Code Quality</h2>
+      <ul>
+        <li>Modular code structure</li>
+        <li>Function-level documentation and inline comments</li>
+        <li>Reproducible results with consistent paths</li>
+        <li>Scalable design for integrating new models</li>
+      </ul>
+
+      <h2>✍️ Author</h2>
+      <p><strong>Alen K Aji</strong></p>
+      <p>📧 <a href="mailto:alenkaji12@gmail.com">alenkaji12@gmail.com</a></p>
+      <p>📍 MACE Kothamangalam, Kerala</p>
     </section>
   </main>
 </body>
