@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Flood Prediction System | Alen K Aji</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <h1>Flood Prediction System</h1>
-    
-
     <nav class="navigation-links">
       <a href="index.html">← Back to Home</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <img src="images\flood.jpeg" alt="Project Banner" class="responsive-image">
-      <p>Designed and deployed a machine learning model based on Gradient Boosting Regressor for flood forecasting using meteorological and geospatial data. Achieved 94% prediction accuracy, enabling early warning systems and aiding disaster management authorities in emergency response planning.</p>
-      <p><strong>Tools:</strong> Python, scikit-learn, Pandas, Matplotlib</p>
+  <main class="content">
+    <section class="project-section">
+      <p>
+        A machine learning model for flood prediction, leveraging geospatial and atmospheric data to enhance forecasting accuracy.
+        The system analyses key environmental factors to support early warning and disaster management efforts.
+      </p>
+
+      <h2>✨Features</h2>
+      <ul>
+        <li>Predicts Flood Probability from environmental features.</li>
+        <li>Uses Gradient Boosting Regressor for accurate predictions.</li>
+        <li>Feature Importance plot to explain the model.</li>
+        <li>Adds Latitude and Longitude to simulate Kerala locations (for visualization, not training).</li>
+        <li>Includes performance metrics: MSE, RMSE, MAE, and R² score.</li>
+      </ul>
+
+      <h2>📁Files</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>flood_prediction.py</td><td>Main Python script for loading data, preprocessing, training, and evaluating the model.</td></tr>
+          <tr><td>flood.csv</td><td>Dataset with environmental data.</td></tr>
+          <tr><td>requirements.txt</td><td>List of required Python packages.</td></tr>
+          <tr><td>README.md</td><td>Project documentation.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>📦How to Run</h2>
+      <ol>
+        <li>Clone the repository:
+          <pre>git clone https://github.com/&lt;your-username&gt;/flood-prediction-system.git
+cd flood-prediction-system</pre>
+        </li>
+        <li>Install dependencies:
+          <pre>pip install -r requirements.txt</pre>
+        </li>
+        <li>Run the script:
+          <pre>python flood_prediction.py</pre>
+        </li>
+      </ol>
+
+      <h2>📊Sample Output</h2>
+      <p>Model Performance Metrics:</p>
+      <ul>
+        <li>Mean Squared Error (MSE)</li>
+        <li>Root Mean Squared Error (RMSE)</li>
+        <li>Mean Absolute Error (MAE)</li>
+        <li>R² Score</li>
+      </ul>
+      <p>It also displays a bar chart showing feature importance.</p>
+
+      <h2>✍️ Author</h2>
+      <p><strong>Alen K Aji</strong></p>
+      <p>📧 <a href="mailto:alenkaji12@gmail.com">alenkaji12@gmail.com</a></p>
+      <p>📍 MACE Kothamangalam, Kerala</p>
     </section>
   </main>
 </body>
