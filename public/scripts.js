@@ -51,39 +51,44 @@ function scrollToSection(event, sectionId) {
   window.scrollTo(0, 0);
   
 function openLightbox(imgElement) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = imgElement.src;
-    lightbox.style.display = 'flex';
-    
-    // Slight delay to trigger CSS animation
-    setTimeout(() => {
-      lightbox.classList.add('active');
-    }, 50);
+  // Check if a lightbox already exists and remove it
+  const existingLightbox = document.getElementById('lightbox');
+  if (existingLightbox) {
+    existingLightbox.remove();
   }
-  document.addEventListener('mousemove', e => {
-    const { clientX, clientY } = e;
-    document.body.style.backgroundPosition = `${clientX * 0.01}px ${clientY * 0.01}px`;
-  });
-  const cursor = document.querySelector('.cursor-dot');
 
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  // Create new lightbox
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.style.position = 'fixed';
+  lightbox.style.top = 0;
+  lightbox.style.left = 0;
+  lightbox.style.width = '100%';
+  lightbox.style.height = '100%';
+  lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  lightbox.style.display = 'flex';
+  lightbox.style.alignItems = 'center';
+  lightbox.style.justifyContent = 'center';
+  lightbox.style.zIndex = 1000;
+
+  // Create image element
+  const fullImg = document.createElement('img');
+  fullImg.src = imgElement.src;
+  fullImg.style.maxWidth = '90%';
+  fullImg.style.maxHeight = '90%';
+  fullImg.style.border = '4px solid white';
+  fullImg.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
+  fullImg.style.borderRadius = '8px';
+
+  // Close on click
+  lightbox.addEventListener('click', () => {
+    lightbox.remove();
   });
-  document.querySelectorAll('button').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      const ripple = document.createElement('span');
-      ripple.classList.add('ripple');
-      ripple.style.left = `${e.offsetX}px`;
-      ripple.style.top = `${e.offsetY}px`;
-      this.appendChild(ripple);
-  
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
-  });
-      
+
+  lightbox.appendChild(fullImg);
+  document.body.appendChild(lightbox);
+}
+
   function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     lightbox.classList.remove('active');
@@ -129,4 +134,25 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-  
+  function showPopup(imgElement) {
+  const wrapper = imgElement.parentElement;
+  const popupBox = wrapper.querySelector('.popup-box');
+  const popupImage = popupBox.querySelector('.popup-image');
+
+  popupImage.src = imgElement.src;
+  popupBox.style.display = 'block';
+
+  // Trigger animation
+  setTimeout(() => {
+    popupBox.classList.add('visible');
+  }, 10);
+}
+
+function closePopup(closeBtn) {
+  const popupBox = closeBtn.parentElement;
+
+  popupBox.classList.remove('visible');
+  setTimeout(() => {
+    popupBox.style.display = 'none';
+  }, 300);
+}
