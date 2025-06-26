@@ -444,6 +444,7 @@ code {
   border-left: 4px solid #007BFF;
   margin-top: 1rem;
   text-align: center;
+  padding-bottom: 2%;
 }
 
 .certificate-link {
@@ -468,18 +469,42 @@ code {
   border-radius: 6px;
   transition: transform 1s ease;
 }
+.certificate-thumb1 {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: transform 1s ease;
+}
 
 .certificate-thumb:hover {
+ 
   transform: scale(1.5);
-}.certificate-wrapper {
+}
+.certificate-thumb1:hover {
+ 
+  transform: translateY(8%) scale(1.5);
+}
+.certificate-wrapper {
   position: relative;
   display: inline-block;
   justify-content: center;
   align-items: center;
-  
-  height: 100px;
+  padding: 20px;
+  height: 120px;
   width: 300px;
 }
+.certificate-wrapper1 {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 250px;
+  width: 300px;
+}
+
 
 .popup-box {
 
@@ -507,7 +532,7 @@ code {
   display: block;
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(50%);
 }
 
 .popup-box img {
