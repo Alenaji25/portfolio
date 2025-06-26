@@ -15,7 +15,7 @@
 
   <main class="content">
     <section class="project-section">
-      <img src="images/leafscan_banner.jpg" alt="LeafScan Banner" class="project-banner">
+      <img src="images/leafscan_image.png" alt="LeafScan Banner" class="project-banner">
 
       <h2>🌿 Project Overview</h2>
       <p>LeafScan is a real-time AI-based application that detects plant diseases from leaf images using deep learning. Built with MobileNetV2 and deployed via Streamlit, the model enables fast, accurate diagnosis to support smart agriculture and research in plant pathology.</p>
@@ -59,7 +59,7 @@
 │   └── leafscan_model.h5
 ├── src/
 │   ├── predict.py
-│   ├── batch_predict.py
+│   ├── train_model.py
 │   └── evaluate.py
 ├── data/ (external download)
 ├── requirements.txt
@@ -103,12 +103,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
       </code></pre>
 
-      <h2>🤝 Contributing</h2>
-      <p>We welcome contributions! Enhance disease detection, improve UI, add mobile support, or suggest more datasets.</p>
-      <pre><code>git checkout -b feature/your-feature
-# Make changes
-# Open a Pull Request</code></pre>
-
+      
       <h2>📚 References</h2>
       <p>This project is inspired by advances in smart agriculture and plant pathology. All model development and UI implementation were done independently using open-source tools and real-world datasets.</p>
     </section>
