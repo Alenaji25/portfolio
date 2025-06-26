@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LeafScan | Alen K Aji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>LeafScan – AI-Powered Plant Disease Detection</h1>
+    <nav class="navigation-links">
+      <a href="index.html">&larr; Back to Home</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="project-section">
+      <img src="images/leafscan_banner.jpg" alt="LeafScan Banner" class="project-banner">
+
+      <h2>🌿 Project Overview</h2>
+      <p>LeafScan is a real-time AI-based application that detects plant diseases from leaf images using deep learning. Built with MobileNetV2 and deployed via Streamlit, the model enables fast, accurate diagnosis to support smart agriculture and research in plant pathology.</p>
+
+      <h2>🎯 Problem Statement</h2>
+      <p>Plant diseases cause 20–40% of global crop losses annually, resulting in over $220 billion in economic damage. Timely diagnosis is often unavailable due to limited access to expert pathologists, especially in rural farming regions.</p>
+
+      <h2>💡 Our Solution</h2>
+      <ul>
+        <li>91% accurate classification of 38+ plant diseases</li>
+        <li>Deep learning with MobileNetV2 and focal loss for class imbalance</li>
+        <li>User-friendly Streamlit interface accessible on any device</li>
+        <li>Real-time prediction (<2 seconds per image)</li>
+        <li>Optimized model (<50MB) for mobile and edge deployment</li>
+      </ul>
+
+      <h2>🧠 Model Architecture</h2>
+      <ul>
+        <li>Input Layer: 224x224x3 RGB image</li>
+        <li>MobileNetV2 (pretrained on ImageNet)</li>
+        <li>Global Average Pooling</li>
+        <li>Dense Layer (128 units, ReLU)</li>
+        <li>Dropout (0.5)</li>
+        <li>Output Layer: 38 classes, Softmax</li>
+      </ul>
+
+      <h2>⚙️ Features</h2>
+      <ul>
+        <li>Streamlit web app with drag-and-drop interface</li>
+        <li>Live confidence scores for predictions</li>
+        <li>Error handling for invalid images</li>
+        <li>Analytics dashboard with precision, recall, F1-score</li>
+        <li>Confusion matrix and class distribution visualizations</li>
+      </ul>
+
+      <h2>📁 File Structure</h2>
+      <pre>
+├── app/
+│   └── streamlit_app.py
+├── model/
+│   └── leafscan_model.h5
+├── src/
+│   ├── predict.py
+│   ├── batch_predict.py
+│   └── evaluate.py
+├── data/ (external download)
+├── requirements.txt
+├── README.md
+      </pre>
+
+      <h2>📂 Dataset</h2>
+      <p>The dataset includes 38 plant disease classes and healthy samples, across crops such as apple, corn, grape, tomato, and strawberry. It is split 80/20 into training and validation sets.</p>
+      <p><strong>🔗 <a href="#">Download Dataset (External)</a></strong></p>
+
+      <h2>🚀 Quick Start</h2>
+      <pre><code># Run the web app
+streamlit run app/streamlit_app.py
+
+# Predict from CLI
+python src/predict.py path/to/image.jpg
+      </code></pre>
+
+      <h2>📈 Model Performance</h2>
+      <ul>
+        <li>Accuracy: 91%</li>
+        <li>Macro F1 Score: 89%</li>
+        <li>Precision: 92%</li>
+        <li>Recall: 91%</li>
+        <li>Top Classes: Corn Rust (F1 0.98), Apple Black Rot, Strawberry Scorch</li>
+      </ul>
+
+      <h2>🧪 Tech Stack</h2>
+      <ul>
+        <li>Python, TensorFlow, Keras</li>
+        <li>Streamlit for frontend</li>
+        <li>Matplotlib, Seaborn for visualization</li>
+        <li>NumPy, Pandas for data handling</li>
+      </ul>
+
+      <h2>🔧 Installation</h2>
+      <pre><code>git clone https://github.com/your-username/leafscan.git
+cd leafscan
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+      </code></pre>
+
+      <h2>🤝 Contributing</h2>
+      <p>We welcome contributions! Enhance disease detection, improve UI, add mobile support, or suggest more datasets.</p>
+      <pre><code>git checkout -b feature/your-feature
+# Make changes
+# Open a Pull Request</code></pre>
+
+      <h2>📚 References</h2>
+      <p>This project is inspired by advances in smart agriculture and plant pathology. All model development and UI implementation were done independently using open-source tools and real-world datasets.</p>
+    </section>
+  </main>
+</body>
+</html>
